@@ -11,6 +11,10 @@ import { HomeComponent } from './Components/home/home.component';
 import { AboutComponent } from './Components/about/about.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+
 
 
 @NgModule({
@@ -27,7 +31,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

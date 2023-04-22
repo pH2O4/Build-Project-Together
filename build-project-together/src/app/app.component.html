@@ -1,36 +1,12 @@
-<style>
-  .navBardemoBasicUsage md-content .ext-content {
-  padding: 50px;
-  margin: 20px;
-  background-color: #FFF2E0; }
-</style>
+<div class="menu">
+  <button class="nav-button" mat-button routerLink="">Feed </button>
 
-<div>
-    <mat-toolbar color="primary">
-        <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span>My App</span>
-      </mat-toolbar>
-      
-      <mat-sidenav-container>
-        <mat-sidenav #sidenav mode="side">
-          <mat-nav-list>
-            <mat-list-item>
-              <a mat-list-item routerLink="/">Home</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a mat-list-item routerLink="/about">About</a>
-            </mat-list-item>
-            <mat-list-item>
-              <a mat-list-item routerLink="/contact">Contact</a>
-            </mat-list-item>
-          </mat-nav-list>
-        </mat-sidenav>
-      
-        <mat-sidenav-content>
-          <router-outlet></router-outlet>
-        </mat-sidenav-content>
-      </mat-sidenav-container>
+  <button class="nav-button" mat-button routerLink="about">Projeto</button>
+
+  <button class="nav-button" mat-button>Chats</button>
+
+  <button class="nav-button"  mat-button>Matchs</button>
+
 </div>
 
+<router-outlet></router-outlet>
