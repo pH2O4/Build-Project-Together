@@ -8,12 +8,15 @@ import { AppComponent } from './app.component';
 import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './Components/home/home.component';
-import { AboutComponent } from './Components/about/about.component';
+import { MakeProjectComponent } from './Components/about/makeproject.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -21,7 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
+    MakeProjectComponent,
     ContactComponent,
   ],
   imports: [
@@ -34,7 +37,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatMenuModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    FormsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
