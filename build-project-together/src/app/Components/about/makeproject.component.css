@@ -1,7 +1,22 @@
 .my-form {
     display: flex;
     flex-direction: column;
-    margin: 90px 90px;
+    margin: 90px 60px;
+    background-color: #7FB3D5;
+    width: 35%;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 10px;
+    height: 350px;
+    justify-content: center;
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.my-form-tags{
+    display: flex;
+    flex-direction: column;
+    margin: 90px 20px;
     background-color: #7FB3D5;
     width: 35%;
     align-items: center;
@@ -15,4 +30,9 @@
 
 .my-form-field {
     width: 70%;
+}
+
+.my-form-collection {
+    display: flex;
+    flex-direction: row;
 }
