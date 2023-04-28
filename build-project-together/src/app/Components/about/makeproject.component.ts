@@ -10,6 +10,7 @@ import {
   faFaceSmile,
   faFaceTired,
   faFaceAngry,
+  faCircleChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -18,6 +19,7 @@ import {
   styleUrls: ['./makeproject.component.css'],
 })
 export class MakeProjectComponent {
+  faCircleChevronRight = faCircleChevronRight
   faFaceSmile = faFaceSmile;
   faFaceTired = faFaceTired;
   faFaceAngry = faFaceAngry;
