@@ -8,9 +8,13 @@
     border: 2px solid #333;
     border-radius: 10px;
     height: 400px;
-    justify-content: center;
     overflow: auto;
+    justify-content: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.AllForms{
+    overflow:auto ;
 }
 
 .my-form-tags{
