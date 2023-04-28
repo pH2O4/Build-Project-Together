@@ -75,7 +75,7 @@ export class MakeProjectComponent {
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    if (this.fruits.length <= 2) {
+    if (this.fruits.length <= 8) {
       this.fruits.push(event.option.viewValue);
     }
     this.fruitInput.nativeElement.value = '';

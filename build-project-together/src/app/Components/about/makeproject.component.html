@@ -1,7 +1,7 @@
 <div id="AllForms" class="my-form-collection">
     <div class="my-form">
+      <h1 id="Create-Project-Title">Denominação e Conceito</h1>
         <mat-form-field class="my-form-field" appearance="fill">
-            <h1 id="Create-Project-Title">Denominação e Conceito</h1>
             <mat-label>Nome</mat-label>
             <input matInput>
         </mat-form-field>
@@ -19,10 +19,10 @@
         </mat-form-field>
     </div>
     <div class="my-form-tags">
-        <h1 id="Create-Project-Title">Requsito Técnico: Personificado</h1>
+        <h1 id="Create-Project-Title-Requests">Requsito Técnico Personificado</h1>
         <mat-form-field class="my-form-field">
             <mat-label>Profissionais necessários para o projeto</mat-label>
-            <mat-chip-grid #chipGrid aria-label="Fruit selection" >
+            <mat-chip-grid class="overflow" #chipGrid aria-label="Fruit selection" >
                 <mat-chip-row *ngFor="let fruit of fruits" (removed)="remove(fruit)">
                     {{fruit}}
                     <button matChipRemove [attr.aria-label]="'remove ' + fruit">
