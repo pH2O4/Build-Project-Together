@@ -20,7 +20,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -46,8 +47,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatChipsModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    FontAwesomeModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

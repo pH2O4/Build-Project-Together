@@ -5,6 +5,8 @@ import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {Task} from '../../Interfaces/Task'
+import { faFaceSmile, faFaceTired, faFaceAngry } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'make-project',
@@ -12,7 +14,9 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./makeproject.component.css']
 })
 export class MakeProjectComponent {
-  
+  faFaceSmile = faFaceSmile
+  faFaceTired = faFaceTired
+  faFaceAngry = faFaceAngry
   separatorKeysCodes: number[] = [ENTER, COMMA];
   fruitCtrl = new FormControl('');
   filteredFruits: Observable<string[]>;
@@ -66,5 +70,38 @@ export class MakeProjectComponent {
     const filterValue = value.toLowerCase();
 
     return this.allFruits.filter(fruit => fruit.toLowerCase().includes(filterValue));
+  }
+
+  task: Task = {
+    name: 'Modalidades',
+    completed: false,
+    color: 'primary',
+    subtasks: [
+      {name: 'Remoto', completed: false, color: 'primary', icon: faFaceSmile},
+      {name: 'Hibrido', completed: false, color: 'accent', icon: faFaceTired},
+      {name: 'Presencial', completed: false, color: 'warn', icon: faFaceAngry},
+    ],
+    icon: faFaceSmile
+  };
+
+  allComplete: boolean = false;
+
+  updateAllComplete() {
+    this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
+  }
+
+  someComplete(): boolean {
+    if (this.task.subtasks == null) {
+      return false;
+    }
+    return this.task.subtasks.filter(t => t.completed).length > 0 && !this.allComplete;
+  }
+
+  setAll(completed: boolean) {
+    this.allComplete = completed;
+    if (this.task.subtasks == null) {
+      return;
+    }
+    this.task.subtasks.forEach(t => (t.completed = completed));
   }
 }

@@ -7,7 +7,7 @@
     align-items: center;
     border: 2px solid #333;
     border-radius: 10px;
-    height: 350px;
+    height: 400px;
     justify-content: center;
     overflow: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -19,14 +19,19 @@
     margin: 90px 20px;
     background-color: #7FB3D5;
     width: 35%;
-    align-items: center;
+    align-items:  center;
     border: 2px solid #333;
     border-radius: 10px;
-    height: 350px;
+    height: 400px;
     justify-content: center;
     overflow: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.left {
+    margin-left: 60px;
+    margin-right: auto; 
+  }
 
 .my-form-field {
     width: 70%;
