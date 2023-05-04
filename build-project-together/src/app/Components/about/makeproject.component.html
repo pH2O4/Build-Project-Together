@@ -3,19 +3,19 @@
     <h1 id="Create-Project-Title">Denominação e Conceito</h1>
     <mat-form-field class="my-form-field" appearance="fill">
       <mat-label>Nome</mat-label>
-      <input matInput />
+      <input matInput type="text" (input)="ValidationNullorEmpty()" [(ngModel)]="ProjectName"/>
     </mat-form-field>
     <mat-form-field class="my-form-field" appearance="fill">
       <mat-label>Tipo</mat-label>
-      <mat-select name="options" [(ngModel)]="selectedOption">
-        <mat-option *ngFor="let option of myOptions" [value]="option.value">
+      <mat-select name="options" (selectionChange)="ValidationNullorEmpty()"  [(ngModel)]="selectedOption">
+        <mat-option  *ngFor="let option of myOptions" [value]="option.value">
           {{ option.label }}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field class="my-form-field" appearance="fill">
       <mat-label>Descrição</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput (input)="ValidationNullorEmpty()" [(ngModel)]="ProjectDescription"></textarea>
     </mat-form-field>
   </div>
   <div class="my-form-tags">
@@ -69,7 +69,7 @@
             <mat-checkbox
               [(ngModel)]="subtask.completed"
               [color]="subtask.color"
-              (ngModelChange)="updateAllComplete()"
+              (ngModelChange)="updateAllComplete(subtask)"
             >
               {{ subtask.name }}
               <fa-icon [icon]="subtask.icon"></fa-icon>
