@@ -10,7 +10,7 @@ import {
   faFaceSmile,
   faFaceTired,
   faFaceAngry,
-  faCircleChevronRight
+  faCircleChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -19,7 +19,10 @@ import {
   styleUrls: ['./makeproject.component.css'],
 })
 export class MakeProjectComponent {
-  faCircleChevronRight = faCircleChevronRight
+  ProjectDescription = '';
+  selectedSubtasks: any[] = [];
+  ProjectName = '';
+  faCircleChevronRight = faCircleChevronRight;
   faFaceSmile = faFaceSmile;
   faFaceTired = faFaceTired;
   faFaceAngry = faFaceAngry;
@@ -33,7 +36,7 @@ export class MakeProjectComponent {
     'Contador',
     'DevOps',
     'Desenvolvedor Java',
-    'Social Midia'
+    'Social Midia',
   ];
   myOptions = [
     { label: 'Saúde', value: 'Saúde' },
@@ -84,6 +87,25 @@ export class MakeProjectComponent {
     this.fruitCtrl.setValue(null);
   }
 
+  ValidationNullorEmpty() {
+    if (
+      !this.isNullOrEmpty(this.ProjectName) ||
+      !this.isNullOrEmpty(this.ProjectDescription) ||
+      !this.isNullOrEmpty(this.selectedOption) ||
+      this.fruits.length < 1 ||
+      this.selectedSubtasks.length < 0
+    ) {
+
+    }
+  }
+
+  isNullOrEmpty(str: string): boolean {
+    if (str == null || str.trim() === '') {
+      return true;
+    }
+    return false;
+  }
+
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
@@ -111,7 +133,16 @@ export class MakeProjectComponent {
 
   allComplete: boolean = false;
 
-  updateAllComplete() {
+  updateAllComplete(subtask: any) {
+    if (subtask.completed) {
+      this.selectedSubtasks.push(subtask);
+    } else {
+      const index = this.selectedSubtasks.indexOf(subtask);
+      if (index >= 0) {
+        this.selectedSubtasks.splice(index, 1);
+      }
+    }
+
     this.allComplete =
       this.task.subtasks != null &&
       this.task.subtasks.every((t) => t.completed);
@@ -133,9 +164,5 @@ export class MakeProjectComponent {
       return;
     }
     this.task.subtasks.forEach((t) => (t.completed = completed));
-  }
-
-  teste(): void {
-    console.log('TESTE');
   }
 }
