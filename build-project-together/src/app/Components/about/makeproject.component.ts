@@ -19,6 +19,9 @@ import {
   styleUrls: ['./makeproject.component.css'],
 })
 export class MakeProjectComponent {
+  hasbeenSelectedAll = false
+  firstStepHasbeenCompleted = true;
+  showButton = false;
   ProjectDescription = '';
   selectedSubtasks: any[] = [];
   ProjectName = '';
@@ -81,29 +84,34 @@ export class MakeProjectComponent {
 
   selected(event: MatAutocompleteSelectedEvent): void {
     if (this.fruits.length <= 8) {
+      this.ValidationNullorEmpty()
       this.fruits.push(event.option.viewValue);
     }
+    this.ValidationNullorEmpty()
     this.fruitInput.nativeElement.value = '';
     this.fruitCtrl.setValue(null);
   }
 
   ValidationNullorEmpty() {
     if (
-      !this.isNullOrEmpty(this.ProjectName) ||
-      !this.isNullOrEmpty(this.ProjectDescription) ||
-      !this.isNullOrEmpty(this.selectedOption) ||
-      this.fruits.length < 1 ||
-      this.selectedSubtasks.length < 0
+      this.isNotNullOrEmpty(this.ProjectName) &&
+      this.isNotNullOrEmpty(this.ProjectDescription) &&
+      this.isNotNullOrEmpty(this.selectedOption) &&
+      this.fruits.length >= 1 &&
+      this.selectedSubtasks.length >= 1 || this.allComplete
     ) {
-
+      this.showButton = true;
+    }
+    else{
+      this.showButton = false;
     }
   }
 
-  isNullOrEmpty(str: string): boolean {
+  isNotNullOrEmpty(str: string): boolean {
     if (str == null || str.trim() === '') {
-      return true;
+      return false;
     }
-    return false;
+    return true;
   }
 
   private _filter(value: string): string[] {
@@ -149,7 +157,9 @@ export class MakeProjectComponent {
   }
 
   someComplete(): boolean {
+    this.ValidationNullorEmpty()
     if (this.task.subtasks == null) {
+            this.ValidationNullorEmpty()
       return false;
     }
     return (
@@ -158,11 +168,19 @@ export class MakeProjectComponent {
     );
   }
 
+  AdvanceStep(){
+    this.firstStepHasbeenCompleted = false
+  }
+
   setAll(completed: boolean) {
     this.allComplete = completed;
+    this.ValidationNullorEmpty()
     if (this.task.subtasks == null) {
+      this.ValidationNullorEmpty()
       return;
     }
     this.task.subtasks.forEach((t) => (t.completed = completed));
+    this.ValidationNullorEmpty()
   }
+
 }
