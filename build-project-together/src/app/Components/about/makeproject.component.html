@@ -92,11 +92,9 @@
       </span>
     </section>
   </div>
-  <button (click)="AdvanceStep()">
+</div>
+  <button id="Next-Form-Step" *ngIf="showButton" (click)="AdvanceStep()">
     <fa-icon
-      id="Next-Form-Step"
-      *ngIf="showButton"
       [icon]="faCircleChevronRight"
     ></fa-icon>
   </button>
-</div>
