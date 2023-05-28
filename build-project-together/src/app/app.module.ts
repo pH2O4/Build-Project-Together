@@ -22,6 +22,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SecoundStepComponent } from './Components/secound-step/secound-step.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeComponent,
     MakeProjectComponent,
     ContactComponent,
+    SecoundStepComponent,
   ],
   imports: [
     BrowserModule,

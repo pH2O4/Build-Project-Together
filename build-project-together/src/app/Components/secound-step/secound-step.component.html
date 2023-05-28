@@ -1,0 +1,12 @@
+<div id="AllForms" class="my-form-collection">
+  <div class="my-form">
+    <p>
+      Selecione o profissinal de:
+      {{ Professionals[currentProfessionalSelection] }}
+    </p>
+    <p>Faltam: {{ Professionals.length }}</p>
+  </div>
+  <button id="Next-Form-Step" *ngIf="showNextButton" (click)="NextProfessional()">
+    <fa-icon [icon]="faCircleChevronRight"></fa-icon>
+  </button>
+</div>

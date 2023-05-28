@@ -22,3 +22,11 @@
   height: 100%;
   width: 100%;
 }
+
+#Next-Form-Step{
+  font-size: 30px;
+  position: absolute;
+  bottom: 120px;
+  right: 180px;
+  border: none;
+}

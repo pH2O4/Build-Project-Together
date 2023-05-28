@@ -5,6 +5,7 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { SecoundStepComponent } from '../secound-step/secound-step.component';
 import { Task } from '../../Interfaces/Task';
 import {
   faFaceSmile,
@@ -20,7 +21,7 @@ import {
 })
 export class MakeProjectComponent {
   hasbeenSelectedAll = false;
-  firstStepHasbeenCompleted = true;
+  firstStepHasbeenCompleted = false;
   showButton = false;
   ProjectDescription = '';
   selectedSubtasks: any[] = [];
@@ -171,6 +172,7 @@ export class MakeProjectComponent {
 
   AdvanceStep() {
     this.firstStepHasbeenCompleted = false;
+    this.showButton = false;
   }
 
   setAll(completed: boolean) {
