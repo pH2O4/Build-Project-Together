@@ -75,11 +75,12 @@ export class MakeProjectComponent {
 
   remove(fruit: string): void {
     const index = this.fruits.indexOf(fruit);
-    console.log('teste');
 
     if (index >= 0) {
       this.fruits.splice(index, 1);
     }
+
+    this.ValidationNullorEmpty();
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
@@ -93,13 +94,13 @@ export class MakeProjectComponent {
   }
 
   ValidationNullorEmpty() {
+    console.log(this.fruits.length);
     if (
-      (this.isNotNullOrEmpty(this.ProjectName) &&
-        this.isNotNullOrEmpty(this.ProjectDescription) &&
-        this.isNotNullOrEmpty(this.selectedOption) &&
-        this.fruits.length >= 1 &&
-        this.selectedSubtasks.length >= 1) ||
-      this.allComplete
+      this.isNotNullOrEmpty(this.ProjectName) &&
+      this.isNotNullOrEmpty(this.ProjectDescription) &&
+      this.isNotNullOrEmpty(this.selectedOption) &&
+      this.fruits.length > 0 &&
+      (this.selectedSubtasks.length > 0 || this.allComplete)
     ) {
       this.showButton = true;
     } else {

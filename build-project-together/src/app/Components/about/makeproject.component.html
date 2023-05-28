@@ -36,7 +36,7 @@
     <mat-form-field class="my-form-field">
       <mat-label>Profissionais necessários para o projeto</mat-label>
       <mat-chip-grid class="overflow" #chipGrid aria-label="Fruit selection">
-        <mat-chip-row *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+        <mat-chip-row *ngFor="let fruit of fruits" (edited)="ValidationNullorEmpty()" (removed)="remove(fruit)">
           {{ fruit }}
           <button matChipRemove [attr.aria-label]="'remove ' + fruit">
             <mat-icon>cancel</mat-icon>
