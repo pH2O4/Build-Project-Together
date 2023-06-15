@@ -1,4 +1,4 @@
-<div id="AllForms" *ngIf="firstStepHasbeenCompleted" class="my-form-collection">
+<div id="AllForms" *ngIf="!firstStepHasbeenCompleted" class="my-form-collection">
   <div class="my-form">
     <h1 id="Create-Project-Title">Denominação e Conceito</h1>
     <mat-form-field class="my-form-field" appearance="fill">
@@ -100,6 +100,6 @@
 <button id="Next-Form-Step" *ngIf="showButton" (click)="AdvanceStep()">
   <fa-icon [icon]="faCircleChevronRight"></fa-icon>
 </button>
-<app-secound-step  [Professionals]="fruits" *ngIf="!firstStepHasbeenCompleted">
+<app-secound-step  [Professionals]="fruits" *ngIf="firstStepHasbeenCompleted">
 
 </app-secound-step>

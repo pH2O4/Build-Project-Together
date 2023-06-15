@@ -171,7 +171,7 @@ export class MakeProjectComponent {
   }
 
   AdvanceStep() {
-    this.firstStepHasbeenCompleted = false;
+    this.firstStepHasbeenCompleted = true;
     this.showButton = false;
   }
 
