@@ -1,4 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Professional } from '../../Interfaces/Profissional';
+import { MatListModule } from '@angular/material/list';
+
 import {
   faFaceSmile,
   faFaceTired,
@@ -16,6 +19,10 @@ export class SecoundStepComponent {
   currentProfessionalSelection = 0;
   faCircleChevronRight = faCircleChevronRight;
   showNextButton = false;
+
+  professionals: Professional[] = [
+    new Professional
+  ];
 
   NextProfessional(): void {}
 }
