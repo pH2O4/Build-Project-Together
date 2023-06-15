@@ -4,9 +4,21 @@
       Selecione o profissinal de:
       {{ Professionals[currentProfessionalSelection] }}
     </p>
-    <p>Faltam: {{ Professionals.length }}</p>
+    <p>Faltam: {{ Professionals.length }} profissinais</p>
+    <mat-selection-list #shoes>
+      <mat-list-option *ngFor="let professinal of professionals">
+        {{ professinal }}
+      </mat-list-option>
+    </mat-selection-list>
+
+    <p>*profissão* selecionados: {{ shoes.selectedOptions.selected.length }}</p>
   </div>
-  <button id="Next-Form-Step" *ngIf="showNextButton" (click)="NextProfessional()">
+
+  <button
+    id="Next-Form-Step"
+    *ngIf="showNextButton"
+    (click)="NextProfessional()"
+  >
     <fa-icon [icon]="faCircleChevronRight"></fa-icon>
   </button>
 </div>
